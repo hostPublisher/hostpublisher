@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Playing Audio in WebView</title>
+    <link rel="stylesheet" href="https://archive.org/download/TopLaguNellaKharisma/Aku%20Cah%20Kerjo.mp3/css?family=Lato:400,700" />
+    <script type='text/javascript' src='js/jquery-2.1.4.min.js'></script>
+    <script type='text/javascript'>
+        function init()
+        {
+           AudioInterface.showToast("halloe");
+        }
+
+        var fileURL = "music/curiopraiagrande.mp3";
+
+        $(document).ready(function() {
+            $(".play").click(function(event) {
+                AudioInterface.play(fileURL);
+                return false;
+            });
+            $(".pause").click(function(event) {
+                AudioInterface.pause();
+                return false;
+            });
+            $(".stop").click(function(event) {
+                AudioInterface.stop();
+                return false;
+            });
+        });
+
+        $(window).on('load', function() {
+            AudioInterface.play(fileURL);
+        });
+    </script>
+    <link rel="stylesheet" href="css/demo.css" />
+</head>
+<body>
+<div style="text-align: center;">
+    <h1>Canto de passaros do brasil &ndash; <span>Curiopraiagrande</span></h1>
+   	<div id="wrapper">
+	        <a href="#" class="play"><img src="images/play.png" width="35" width="35"/></a>
+        <a href="#" class="pause"><img src="images/pause.png" width="35" width="35"/></a>
+        <a href="#" class="stop"><img src="images/stop.png" width="35" width="35" /></a>
+
+        <div class="attribution">
+            <div>
+               <img alt="Canto" src="Canto.png" height="210" width="210" />
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
